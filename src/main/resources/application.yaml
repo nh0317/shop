@@ -1,0 +1,29 @@
+spring:
+  application:
+    name : shop
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnders
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  #    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3305/shop
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 40
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
